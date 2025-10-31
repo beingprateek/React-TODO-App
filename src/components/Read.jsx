@@ -1,3 +1,4 @@
+import { toast } from "react-toastify";
 
 const Read = (props) => {
     const todos = props.todos;
@@ -6,6 +7,7 @@ const Read = (props) => {
     const DeleteHandler = (id) => {
         const filtertodo = todos.filter(todo => todo.id != id);
         settodos(filtertodo);
+        toast.error("Todo deleted")
     }
 
     const rendertodos = todos.map(todo => {
